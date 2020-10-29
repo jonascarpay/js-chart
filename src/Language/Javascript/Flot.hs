@@ -24,45 +24,67 @@
 -- >
 -- > flotContents :: BS.ByteString
 -- > flotContents = $(embedFile =<< runIO (Flot.file Flot.Flot))
-module Language.Javascript.Flot(
-    Flot(..), version, file
-    ) where
+module Language.Javascript.Flot
+  ( Flot (..),
+    version,
+    file,
+  )
+where
 
-import qualified Paths_js_flot as Paths
-import Data.Version
-import Data.Data
 import Data.Char
-
+import Data.Data
+import Data.Version
+import qualified Paths_js_flot as Paths
 
 -- | The Flot code to obtain. Use 'Flot' for the base system and the other values
 --   for the various addins shipped with Flot.
 data Flot
-    = Flot
-    | FlotCanvas
-    | FlotCategories
-    | FlotCrosshair
-    | FlotErrorbars
-    | FlotFillbetween
-    | FlotImage
-    | FlotNavigate
-    | FlotPie
-    | FlotResize
-    | FlotSelection
-    | FlotStack
-    | FlotSymbol
-    | FlotThreshold
-    | FlotTime
-    deriving (Eq,Ord,Show,Read,Bounded,Enum,Data,Typeable)
+  = Flot
+  | FlotAxislabels
+  | FlotBrowser
+  | FlotCategories
+  | FlotComposeImages
+  | FlotCrosshair
+  | FlotDrawSeries
+  | FlotErrorbars
+  | FlotFillbetween
+  | FlotFlatdata
+  | FlotHover
+  | FlotImage
+  | FlotLegend
+  | FlotLogaxis
+  | FlotNavigate
+  | FlotPie
+  | FlotResize
+  | FlotSaturated
+  | FlotSelection
+  | FlotStack
+  | FlotSymbol
+  | FlotThreshold
+  | FlotTime
+  | FlotTouch
+  | FlotTouchNavigate
+  | FlotUiConstants
+  | LibMousewheel
+  | LibCanvaswrapper
+  | LibColorhelpers
+  | LibEventDrag
+  deriving (Eq, Ord, Show, Read, Bounded, Enum, Data, Typeable)
 
 -- | A local file containing the minified Flot code for 'version'.
 file :: Flot -> IO FilePath
 file = Paths.getDataFileName . name
 
-
 name :: Flot -> String
 name Flot = "jquery.flot.min.js"
-name x = "jquery.flot." ++ map toLower (drop 4 $ show x) ++ ".min.js"
-
+name LibMousewheel = "jquery.mousewheel.min.js"
+name LibCanvaswrapper = "jquery.canvaswrapper.min.js"
+name LibColorhelpers = "jquery.colorhelpers.min.js"
+name LibEventDrag = "jquery.event.drag.min.js"
+name x = "jquery.flot." ++ lowerHead (drop 4 $ show x) ++ ".min.js"
+  where
+    lowerHead (x : xs) = toLower x : xs
+    lowerHead [] = []
 
 -- | The version of Flot provided by this package. Not necessarily the version of this package,
 --   but the versions will match in the first three digits.

@@ -13,4 +13,4 @@ getDataFileName x = do
     pure $ dir </> "javascript" </> x
 
 version :: Version
-version = Version [0,8,3] []
+version = Version [4,2,1] []

@@ -1,7 +1,7 @@
 cabal-version:      >= 1.18
 build-type:         Simple
 name:               js-flot
-version:            0.8.3
+version:            4.2.1
 license:            MIT
 license-file:       LICENSE
 category:           Javascript
@@ -18,29 +18,43 @@ description:
 homepage:           https://github.com/ndmitchell/js-flot#readme
 bug-reports:        https://github.com/ndmitchell/js-flot/issues
 tested-with:        GHC==8.10, GHC==8.8, GHC==8.6, GHC==8.4, GHC==8.2, GHC==8.0
-extra-source-files:
-    javascript/flot-0.8.3.zip
+extra-source-files: javascript/flot-4.2.1.zip
 extra-doc-files:
     CHANGES.txt
     README.md
 
 data-dir: javascript
 data-files:
-    jquery.flot.min.js
-    jquery.flot.canvas.min.js
-    jquery.flot.categories.min.js
-    jquery.flot.crosshair.min.js
-    jquery.flot.errorbars.min.js
-    jquery.flot.fillbetween.min.js
-    jquery.flot.image.min.js
-    jquery.flot.navigate.min.js
-    jquery.flot.pie.min.js
-    jquery.flot.resize.min.js
-    jquery.flot.selection.min.js
-    jquery.flot.stack.min.js
-    jquery.flot.symbol.min.js
-    jquery.flot.threshold.min.js
-    jquery.flot.time.min.js
+  jquery.canvaswrapper.min.js
+  jquery.colorhelpers.min.js
+  jquery.event.drag.min.js
+  jquery.flot.axislabels.min.js
+  jquery.flot.browser.min.js
+  jquery.flot.categories.min.js
+  jquery.flot.composeImages.min.js
+  jquery.flot.crosshair.min.js
+  jquery.flot.drawSeries.min.js
+  jquery.flot.errorbars.min.js
+  jquery.flot.fillbetween.min.js
+  jquery.flot.flatdata.min.js
+  jquery.flot.hover.min.js
+  jquery.flot.image.min.js
+  jquery.flot.legend.min.js
+  jquery.flot.logaxis.min.js
+  jquery.flot.min.js
+  jquery.flot.navigate.min.js
+  jquery.flot.pie.min.js
+  jquery.flot.resize.min.js
+  jquery.flot.saturated.min.js
+  jquery.flot.selection.min.js
+  jquery.flot.stack.min.js
+  jquery.flot.symbol.min.js
+  jquery.flot.threshold.min.js
+  jquery.flot.time.min.js
+  jquery.flot.touch.min.js
+  jquery.flot.touchNavigate.min.js
+  jquery.flot.uiConstants.min.js
+  jquery.mousewheel.min.js
 
 source-repository head
     type:     git
