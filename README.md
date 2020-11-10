@@ -8,7 +8,6 @@ This package is a fork of [https://hackage.haskell.org/package/js-flot](js-flot)
 ```haskell
 import qualified Language.Javascript.Chart as Chart
 
-TODO check
 main = do
     putStrLn $ "Chart version " ++ show Chart.version ++ " source:"
     putStrLn =<< readFile =<< Chart.file Chart.Chart

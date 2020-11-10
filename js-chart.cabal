@@ -1,7 +1,7 @@
 cabal-version:      >=1.18
 build-type:         Simple
 name:               js-chart
-version:            2.9.4
+version:            2.9.4.1
 license:            MIT
 license-file:       LICENSE
 category:           Javascript
@@ -19,10 +19,10 @@ description:
 
 homepage:           https://github.com/jonascarpay/js-chart#readme
 bug-reports:        https://github.com/jonascarpay/js-chart/issues
-tested-with:        GHC==8.10, GHC==8.8, GHC==8.6, GHC==8.4, GHC==8.2, GHC==8.0
+tested-with:        GHC ==8.0 || ==8.2 || ==8.4 || ==8.6 || ==8.8 || ==8.10
 extra-source-files: javascript/chart.js-2.9.4.tgz
 extra-doc-files:
-  CHANGES.txt
+  CHANGELOG.md
   README.md
 
 data-dir:           javascript

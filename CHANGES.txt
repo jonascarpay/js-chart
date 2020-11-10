@@ -1,4 +1,0 @@
-Changelog for js-chart
-
-2.9.4, released TODO
-    Initial fork of js-flot

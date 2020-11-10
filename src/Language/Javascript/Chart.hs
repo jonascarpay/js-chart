@@ -6,7 +6,6 @@
 -- > import qualified Language.Javascript.Chart as Chart
 -- >
 -- > main = do
--- TODO check
 -- >     putStrLn $ "Chart version " ++ show Chart.version ++ " source:"
 -- >     putStrLn =<< readFile =<< Chart.file Chart.Chart
 --
