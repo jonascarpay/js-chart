@@ -1,14 +1,19 @@
-# Based on https://github.com/jonascarpay/template-haskell
-let hsPkgs = import ./.;
+let
+  pkgs = import ./pkgs.nix;
+  hsPkgs = pkgs.hsPkgs;
+  ormolu = pkgs.haskell-nix.tool hsPkgs.projectArgs.compiler-nix-name "ormolu" "latest";
+  # Warning: only works with ghc 8.10 and up!
+  ormolu-wrapped = pkgs.writeShellScriptBin "ormolu" ''
+    ${ormolu}/bin/ormolu --ghc-opt=-XImportQualifiedPost $@
+  '';
 in
 hsPkgs.shellFor {
   withHoogle = true;
   tools = {
-    cabal = "3.2.0.0";
-    hlint = "3.1.5";
-    ghcid = "0.8.7";
-    ghcide = "0.2.0";
-    ormolu = "0.1.0.0";
+    cabal = "latest";
+    ghcid = "latest";
+    haskell-language-server = "latest";
   };
+  buildInputs = [ ormolu-wrapped ];
   exactDeps = true;
 }
