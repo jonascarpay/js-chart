@@ -3,7 +3,8 @@ build-type:         Simple
 name:               js-chart
 version:            2.9.4.1
 license:            MIT
-license-file:       LICENSE
+
+-- license-file:       LICENSE -- Disabled because for some voodoo reason this breaks the nix build
 category:           Javascript
 author:             Jonas Carpay <jonascarpay@gmail.com>
 maintainer:         Jonas Carpay <jonascarpay@gmail.com>
@@ -28,8 +29,8 @@ extra-doc-files:
 data-dir:           javascript
 data-files:
   Chart.bundle.min.js
-  Chart.min.js
   Chart.min.css
+  Chart.min.js
 
 source-repository head
   type:     git
